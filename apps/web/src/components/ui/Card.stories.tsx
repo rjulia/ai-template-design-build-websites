@@ -8,12 +8,32 @@ const meta = {
   title: 'UI/Card',
   component: Card,
   tags: ['autodocs'],
+  args: {
+    children: 'Reusable container for feature sections and content blocks.',
+  },
+  argTypes: {
+    children: {
+      control: { type: 'text' },
+      description: 'Card body content',
+    },
+    className: {
+      control: { type: 'text' },
+    },
+  },
 } satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Playground: Story = {
+  render: (args) => (
+    <Card {...args} style={{ maxWidth: 360 }}>
+      <p>{args.children}</p>
+    </Card>
+  ),
+};
+
+export const ComposedContent: Story = {
   render: () => (
     <Card style={{ maxWidth: 360 }}>
       <SectionHeading

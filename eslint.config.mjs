@@ -10,6 +10,7 @@ export default tseslint.config(
   {
     ignores: [
       '**/dist/**',
+      '**/storybook-static/**',
       '**/coverage/**',
       '**/.turbo/**',
       '**/node_modules/**',
