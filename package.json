@@ -12,6 +12,8 @@
     "dev": "turbo run dev --parallel",
     "dev:web": "turbo run dev --filter=@apps/web",
     "dev:cms": "turbo run dev --filter=@apps/cms",
+    "storybook": "turbo run storybook --filter=@apps/web",
+    "build:storybook": "turbo run build-storybook --filter=@apps/web",
     "build": "turbo run build",
     "lint": "turbo run lint && eslint .",
     "lint:fix": "eslint . --fix",

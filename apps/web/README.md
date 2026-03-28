@@ -4,12 +4,13 @@ React + Vite + TypeScript frontend with Redux Toolkit, unit tests, and E2E tests
 
 ## Stack
 
-- React 19
+- React 18
 - Vite
 - TypeScript
 - Redux Toolkit + RTK Query
 - Vitest + Testing Library
 - Playwright
+- Storybook
 
 ## Commands
 
@@ -27,6 +28,8 @@ Run from this folder:
 ```bash
 npm run dev
 npm run build
+npm run storybook
+npm run build-storybook
 npm run test
 npm run test:e2e
 ```

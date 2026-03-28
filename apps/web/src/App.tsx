@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from './app/hooks';
+import { Button, Card, SectionHeading } from './components/ui';
 import { decrement, increment } from './features/counter/counterSlice';
 import { useGetHealthQuery } from './services/cmsApi';
 
@@ -37,24 +38,24 @@ function HomePage() {
       </section>
 
       <section className="surface-grid">
-        <article className="surface-card">
-          <h2>Redux health check</h2>
+        <Card>
+          <SectionHeading title="Redux health check" subtitle="State management is wired and ready." />
           <p>Counter value: {counter}</p>
           <div className="button-row">
-            <button type="button" onClick={() => dispatch(decrement())}>
+            <Button variant="secondary" onClick={() => dispatch(decrement())}>
               Decrement
-            </button>
-            <button type="button" onClick={() => dispatch(increment())}>
+            </Button>
+            <Button onClick={() => dispatch(increment())}>
               Increment
-            </button>
+            </Button>
           </div>
-        </article>
+        </Card>
 
-        <article className="surface-card">
-          <h2>CMS health check</h2>
+        <Card>
+          <SectionHeading title="CMS health check" subtitle="Frontend <-> Strapi connection status." />
           <p>{getCmsStatusMessage(isLoading, isError, data?.message)}</p>
           <p className="muted">Endpoint: {import.meta.env.VITE_CMS_BASE_URL ?? 'http://localhost:1337/api'}</p>
-        </article>
+        </Card>
       </section>
     </main>
   );
