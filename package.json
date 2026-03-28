@@ -1,0 +1,36 @@
+{
+  "name": "ai-template-design-build-websites",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo starter for Figma to web delivery with React, Redux, Strapi, and PostgreSQL.",
+  "packageManager": "npm@10.9.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=@apps/web",
+    "dev:cms": "turbo run dev --filter=@apps/cms",
+    "build": "turbo run build",
+    "lint": "turbo run lint && eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "turbo run typecheck",
+    "test:unit": "turbo run test --filter=@apps/web",
+    "test:e2e": "turbo run test:e2e --filter=@apps/web",
+    "format": "prettier . --write"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@playwright/test": "^1.52.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
+    "typescript-eslint": "^8.29.1"
+  }
+}

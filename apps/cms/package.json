@@ -1,0 +1,20 @@
+{
+  "name": "@apps/cms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "strapi develop",
+    "build": "strapi build",
+    "start": "strapi start",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@strapi/strapi": "^5.14.0",
+    "pg": "^8.15.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3"
+  }
+}

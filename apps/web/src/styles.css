@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #101122;
+  background:
+    radial-gradient(circle at 0% 0%, #f6f2ff 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, #dff9ff 0%, transparent 45%),
+    #f3f5f7;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top-nav {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid rgba(16, 17, 34, 0.12);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+}
+
+.top-nav nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.brand {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.page-shell {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.hero-card {
+  background: linear-gradient(130deg, #fefefe 0%, #f0f7ff 100%);
+  border: 1px solid rgba(16, 17, 34, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(16, 17, 34, 0.08);
+  margin-bottom: 1.25rem;
+  padding: 1.5rem;
+}
+
+.kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.hero-card h1 {
+  margin: 0;
+}
+
+.surface-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.surface-card {
+  background: #ffffff;
+  border: 1px solid rgba(16, 17, 34, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.surface-card h2 {
+  margin-top: 0;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+button {
+  background: #101122;
+  border: 0;
+  border-radius: 10px;
+  color: #f6f7fb;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+.muted {
+  color: #5f6278;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .top-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .page-shell {
+    padding: 1rem 1rem 2rem;
+  }
+}

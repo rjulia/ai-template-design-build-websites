@@ -1,0 +1,21 @@
+node_modules/
+.turbo/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Strapi
+apps/cms/.cache/
+apps/cms/.tmp/
+apps/cms/build/
+apps/cms/public/uploads/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
