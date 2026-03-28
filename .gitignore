@@ -1,6 +1,7 @@
 node_modules/
 .turbo/
 dist/
+storybook-static/
 coverage/
 playwright-report/
 test-results/
@@ -16,6 +17,7 @@ apps/cms/.tmp/
 apps/cms/build/
 apps/cms/public/uploads/*
 !apps/cms/public/uploads/.gitkeep
+apps/web/storybook-static/
 
 # OS/editor files
 .DS_Store

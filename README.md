@@ -8,6 +8,7 @@ This repository is the execution-ready foundation for building websites from Fig
 - Turborepo for monorepo task orchestration and caching
 - ESLint + Prettier
 - Vitest (unit tests) + Playwright (E2E)
+- Storybook for component-driven UI development
 
 ## Workspace Layout
 
@@ -60,6 +61,12 @@ npm run lint
 npm run typecheck
 npm run test:unit
 npm run test:e2e
+```
+
+6. Run Storybook:
+
+```bash
+npm run storybook
 ```
 
 ## Deployment Targets (From the Plan)

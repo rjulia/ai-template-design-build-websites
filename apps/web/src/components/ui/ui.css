@@ -1,0 +1,48 @@
+.ui-card {
+  background: #ffffff;
+  border: 1px solid rgba(16, 17, 34, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.ui-button {
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ui-button:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.ui-button--primary {
+  background: #101122;
+  color: #f6f7fb;
+}
+
+.ui-button--secondary {
+  background: #e7ecf8;
+  color: #101122;
+}
+
+.ui-button--ghost {
+  background: transparent;
+  border: 1px solid rgba(16, 17, 34, 0.3);
+  color: #101122;
+}
+
+.ui-section-heading h2 {
+  margin: 0;
+}
+
+.ui-section-heading p {
+  color: #5f6278;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  margin-top: 0.35rem;
+}
