@@ -1,12 +1,4 @@
-type StrapiEnv = {
-  (key: string, defaultValue?: string): string;
-};
-
-type StrapiConfigContext = {
-  env: StrapiEnv;
-};
-
-export default ({ env }: StrapiConfigContext) => ({
+module.exports = ({ env }) => ({
   auth: {
     secret: env('ADMIN_JWT_SECRET'),
   },

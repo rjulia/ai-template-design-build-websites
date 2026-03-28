@@ -1,14 +1,4 @@
-type StrapiEnv = {
-  (key: string, defaultValue?: string): string;
-  int: (key: string, defaultValue?: number) => number;
-  bool: (key: string, defaultValue?: boolean) => boolean;
-};
-
-type StrapiConfigContext = {
-  env: StrapiEnv;
-};
-
-export default ({ env }: StrapiConfigContext) => {
+module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'postgres');
 
   const connections = {
@@ -37,7 +27,7 @@ export default ({ env }: StrapiConfigContext) => {
   return {
     connection: {
       client,
-      ...connections[client as keyof typeof connections],
+      ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60_000),
     },
   };

@@ -8,6 +8,7 @@ Strapi CMS configured for PostgreSQL and prepared for frontend consumption.
 - PostgreSQL database configuration
 - Public `GET /api/health` endpoint for app connectivity checks
 - Starter `Page` content type
+- Runtime-ready JS config files for Strapi v5 (`config/*.js`)
 
 ## Setup
 
@@ -37,8 +38,8 @@ npm run dev:cms
 
 ## Key Files
 
-- `config/database.ts`: PostgreSQL settings and connection timeout.
-- `config/server.ts`: host/port and application keys.
+- `config/database.js`: PostgreSQL settings and connection timeout.
+- `config/server.js`: host/port and application keys.
 - `src/api/health/*`: health endpoint used by web app.
 - `src/api/page/content-types/page/schema.json`: first page model.
 
@@ -48,3 +49,20 @@ npm run dev:cms
 2. Configure roles and permissions for public read access where needed.
 3. Add media strategy (S3-compatible storage for production).
 4. Add migration/seed strategy for staging and production consistency.
+
+## Troubleshooting
+
+If `npm run dev:cms` fails with:
+
+`password authentication failed for user "strapi"`
+
+use one of these options:
+
+1. Use the project PostgreSQL container and credentials from `.env`:
+   - `docker compose -f infra/docker-compose.postgres.yml down -v`
+   - `docker compose -f infra/docker-compose.postgres.yml up -d`
+2. Keep your existing local PostgreSQL and update `apps/cms/.env`:
+   - set `DATABASE_USERNAME` and `DATABASE_PASSWORD` to valid local credentials
+   - ensure `DATABASE_NAME` exists
+
+Default project DB mapping uses host port `5433` to avoid conflicts with local PostgreSQL on `5432`.

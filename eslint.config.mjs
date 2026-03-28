@@ -16,10 +16,21 @@ export default tseslint.config(
       'apps/cms/.cache/**',
       'apps/cms/.tmp/**',
       'apps/cms/build/**',
+      'apps/cms/.strapi/**',
+      'apps/cms/types/generated/**',
     ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  {
+    files: ['**/*.{js,cjs,mjs}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
   {
     files: ['**/*.{ts,tsx,mts,cts}'],
     languageOptions: {
