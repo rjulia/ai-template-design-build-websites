@@ -61,6 +61,14 @@ npm run lint
 npm run typecheck
 npm run test:unit
 npm run test:e2e
+npm run build:storybook
+npm run storybook:check-controls
+```
+
+Or run the combined gate:
+
+```bash
+npm run qa
 ```
 
 6. Run Storybook:

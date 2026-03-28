@@ -13,6 +13,7 @@
     "dev:web": "turbo run dev --filter=@apps/web",
     "dev:cms": "turbo run dev --filter=@apps/cms",
     "storybook": "turbo run storybook --filter=@apps/web",
+    "storybook:check-controls": "node ./scripts/check-storybook-controls.mjs",
     "build:storybook": "turbo run build-storybook --filter=@apps/web",
     "build": "turbo run build",
     "lint": "turbo run lint && eslint .",
@@ -20,6 +21,7 @@
     "typecheck": "turbo run typecheck",
     "test:unit": "turbo run test --filter=@apps/web",
     "test:e2e": "turbo run test:e2e --filter=@apps/web",
+    "qa": "npm run lint && npm run typecheck && npm run test:unit && npm run build:storybook && npm run storybook:check-controls",
     "format": "prettier . --write"
   },
   "devDependencies": {

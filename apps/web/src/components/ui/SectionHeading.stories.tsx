@@ -10,12 +10,20 @@ const meta = {
     title: 'Section Title',
     subtitle: 'Optional supporting copy to clarify intent.',
   },
+  argTypes: {
+    title: {
+      control: { type: 'text' },
+    },
+    subtitle: {
+      control: { type: 'text' },
+    },
+  },
 } satisfies Meta<typeof SectionHeading>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Playground: Story = {};
 
 export const TitleOnly: Story = {
   args: {
