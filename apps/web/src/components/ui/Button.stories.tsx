@@ -51,6 +51,13 @@ export const Ghost: Story = {
   },
 };
 
+export const Brand: Story = {
+  args: {
+    variant: 'brand',
+    children: 'Brand Action',
+  },
+};
+
 export const Disabled: Story = {
   args: {
     variant: 'primary',

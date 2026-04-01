@@ -3,6 +3,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { Button, Card, SectionHeading } from './components/ui';
 import { decrement, increment } from './features/counter/counterSlice';
+import { BlogPage } from './pages/BlogPage';
+import { ContactPage } from './pages/ContactPage';
+import { HomePage } from './pages/HomePage';
 import { useGetHealthQuery } from './services/cmsApi';
 
 const getCmsStatusMessage = (
@@ -21,7 +24,7 @@ const getCmsStatusMessage = (
   return message ?? 'Connected';
 };
 
-function HomePage() {
+function PlaygroundPage() {
   const counter = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
   const { data, isLoading, isError } = useGetHealthQuery();
@@ -30,11 +33,8 @@ function HomePage() {
     <main className="page-shell">
       <section className="hero-card">
         <p className="kicker">Build phase</p>
-        <h1>Figma-to-Web Starter</h1>
-        <p>
-          React + Redux + Vite frontend connected to Strapi. This is our working base before
-          implementing real Figma screens.
-        </p>
+        <h1>Frontend Playground</h1>
+        <p>Operational route for validating Redux and CMS connectivity while we build Figma pages.</p>
       </section>
 
       <section className="surface-grid">
@@ -45,9 +45,7 @@ function HomePage() {
             <Button variant="secondary" onClick={() => dispatch(decrement())}>
               Decrement
             </Button>
-            <Button onClick={() => dispatch(increment())}>
-              Increment
-            </Button>
+            <Button onClick={() => dispatch(increment())}>Increment</Button>
           </div>
         </Card>
 
@@ -80,19 +78,26 @@ function DocsPage() {
 
 export default function App() {
   return (
-    <>
-      <header className="top-nav">
-        <div className="brand">Design Build System</div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/docs">Docs</Link>
-        </nav>
-      </header>
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/docs" element={<DocsPage />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/playground" element={<PlaygroundPage />} />
+      <Route path="/docs" element={<DocsPage />} />
+      <Route
+        path="*"
+        element={
+          <main className="page-shell">
+            <section className="hero-card">
+              <h1>Page not found</h1>
+              <p>
+                Return to <Link to="/">Home</Link>, open <Link to="/blog">Blog</Link>, or open{' '}
+                <Link to="/contact">Contact</Link>.
+              </p>
+            </section>
+          </main>
+        }
+      />
+    </Routes>
   );
 }

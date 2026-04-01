@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": "Structured content model for the Furniro home page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "headerContent": {
+      "type": "json",
+      "required": true
+    },
+    "heroContent": {
+      "type": "json",
+      "required": true
+    },
+    "rangeSectionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "rangeSectionDescription": {
+      "type": "string",
+      "required": true
+    },
+    "rangeItems": {
+      "type": "json",
+      "required": true
+    },
+    "productsSectionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "showMoreLabel": {
+      "type": "string",
+      "required": true
+    },
+    "showMoreHref": {
+      "type": "string",
+      "required": true
+    },
+    "products": {
+      "type": "json",
+      "required": true
+    },
+    "productOverlayActions": {
+      "type": "json",
+      "required": true
+    },
+    "addToCartLabel": {
+      "type": "string",
+      "required": true
+    },
+    "inspirationContent": {
+      "type": "json",
+      "required": true
+    },
+    "shareContent": {
+      "type": "json",
+      "required": true
+    },
+    "footerContent": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
