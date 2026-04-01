@@ -7,6 +7,7 @@ import { BlogPage } from './pages/BlogPage';
 import { ContactPage } from './pages/ContactPage';
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
+import { SingleProductPage } from './pages/SingleProductPage';
 import { useGetHealthQuery } from './services/cmsApi';
 
 const getCmsStatusMessage = (
@@ -82,6 +83,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
+      <Route path="/shop/:productSlug" element={<SingleProductPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/playground" element={<PlaygroundPage />} />

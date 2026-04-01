@@ -5,6 +5,7 @@ import type {
   CmsContactPageContent,
   CmsHealth,
   CmsHomePageContent,
+  CmsSingleProductPageContent,
   CmsShopPageContent,
 } from '@workspace/shared';
 
@@ -33,6 +34,10 @@ export const cmsApi = createApi({
       query: (slug) =>
         `/shop-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
     }),
+    getSingleProductPageBySlug: builder.query<CmsCollectionResponse<CmsSingleProductPageContent>, string>({
+      query: (slug) =>
+        `/single-product-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
+    }),
   }),
 });
 
@@ -41,5 +46,6 @@ export const {
   useGetContactPageBySlugQuery,
   useGetHealthQuery,
   useGetHomePageBySlugQuery,
+  useGetSingleProductPageBySlugQuery,
   useGetShopPageBySlugQuery,
 } = cmsApi;

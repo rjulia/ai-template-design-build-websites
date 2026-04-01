@@ -554,6 +554,40 @@ export interface ApiShopPageShopPage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSingleProductPageSingleProductPage extends Struct.CollectionTypeSchema {
+  collectionName: 'single_product_pages';
+  info: {
+    description: 'Structured content model for the Furniro single product page';
+    displayName: 'Single Product Page';
+    pluralName: 'single-product-pages';
+    singularName: 'single-product-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    breadcrumbContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    descriptionContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    footerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    headerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::single-product-page.single-product-page'
+    > &
+      Schema.Attribute.Private;
+    productContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    relatedProductsContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
   info: {
@@ -866,6 +900,7 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::page.page': ApiPagePage;
       'api::shop-page.shop-page': ApiShopPageShopPage;
+      'api::single-product-page.single-product-page': ApiSingleProductPageSingleProductPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

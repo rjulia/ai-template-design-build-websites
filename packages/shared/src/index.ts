@@ -253,3 +253,95 @@ export type CmsShopPageContent = {
   featureHighlights: CmsFeatureHighlight[];
   footerContent: CmsFooterContent;
 };
+
+export type CmsSingleProductBreadcrumbContent = {
+  items: Array<{
+    label: string;
+    href: string;
+  }>;
+  currentLabel: string;
+  separatorIconUrl: string;
+};
+
+export type CmsSingleProductGalleryImage = {
+  id: string;
+  imageUrl: string;
+  alt: string;
+};
+
+export type CmsSingleProductSizeOption = {
+  id: string;
+  label: string;
+  isSelected?: boolean;
+};
+
+export type CmsSingleProductColorOption = {
+  id: string;
+  label: string;
+  hex: string;
+  isSelected?: boolean;
+};
+
+export type CmsSingleProductShareIcon = {
+  id: string;
+  iconUrl: string;
+  href: string;
+  label: string;
+};
+
+export type CmsSingleProductContent = {
+  title: string;
+  priceLabel: string;
+  rating: {
+    fullStars: number;
+    hasHalfStar: boolean;
+    fullStarIconUrl: string;
+    halfStarIconUrl: string;
+    reviewLabel: string;
+  };
+  shortDescription: string;
+  gallery: {
+    thumbnails: CmsSingleProductGalleryImage[];
+    mainImageUrl: string;
+    mainImageAlt: string;
+  };
+  sizes: CmsSingleProductSizeOption[];
+  colors: CmsSingleProductColorOption[];
+  quantityDefault: number;
+  addToCartLabel: string;
+  compareLabel: string;
+  sku: string;
+  category: string;
+  tags: string;
+  shareIcons: CmsSingleProductShareIcon[];
+};
+
+export type CmsSingleProductDescriptionContent = {
+  tabs: Array<{
+    id: 'description' | 'additional-information' | 'reviews';
+    label: string;
+  }>;
+  descriptionParagraphs: string[];
+  additionalInformationParagraphs: string[];
+  reviewsSummary: string;
+  galleryImages: CmsSingleProductGalleryImage[];
+};
+
+export type CmsSingleProductRelatedProductsContent = {
+  title: string;
+  products: CmsHomeProduct[];
+  addToCartLabel: string;
+  showMoreLabel: string;
+  showMoreHref: string;
+};
+
+export type CmsSingleProductPageContent = {
+  slug: string;
+  title: string;
+  headerContent: CmsHeaderContent;
+  breadcrumbContent: CmsSingleProductBreadcrumbContent;
+  productContent: CmsSingleProductContent;
+  descriptionContent: CmsSingleProductDescriptionContent;
+  relatedProductsContent: CmsSingleProductRelatedProductsContent;
+  footerContent: CmsFooterContent;
+};
