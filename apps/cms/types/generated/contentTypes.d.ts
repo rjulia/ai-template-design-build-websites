@@ -387,6 +387,111 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
+  collectionName: 'blog_pages';
+  info: {
+    description: 'Structured content model for the Furniro blog page';
+    displayName: 'Blog Page';
+    pluralName: 'blog-pages';
+    singularName: 'blog-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.JSON & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    featureHighlights: Schema.Attribute.JSON & Schema.Attribute.Required;
+    footerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    headerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    heroContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog-page.blog-page'> &
+      Schema.Attribute.Private;
+    pagination: Schema.Attribute.JSON & Schema.Attribute.Required;
+    posts: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    recentPosts: Schema.Attribute.JSON & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_pages';
+  info: {
+    description: 'Structured content model for the Furniro contact page';
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactDetails: Schema.Attribute.JSON & Schema.Attribute.Required;
+    contactFormContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    featureHighlights: Schema.Attribute.JSON & Schema.Attribute.Required;
+    footerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    headerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    heroContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    introDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    introTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::contact-page.contact-page'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    description: 'Structured content model for the Furniro home page';
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addToCartLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    footerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    headerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    heroContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    inspirationContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home-page.home-page'> &
+      Schema.Attribute.Private;
+    productOverlayActions: Schema.Attribute.JSON & Schema.Attribute.Required;
+    products: Schema.Attribute.JSON & Schema.Attribute.Required;
+    productsSectionTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    rangeItems: Schema.Attribute.JSON & Schema.Attribute.Required;
+    rangeSectionDescription: Schema.Attribute.String & Schema.Attribute.Required;
+    rangeSectionTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    shareContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    showMoreHref: Schema.Attribute.String & Schema.Attribute.Required;
+    showMoreLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -722,6 +827,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog-page.blog-page': ApiBlogPageBlogPage;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::page.page': ApiPagePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

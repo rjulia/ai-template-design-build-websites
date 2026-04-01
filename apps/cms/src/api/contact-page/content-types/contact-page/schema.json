@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Structured content model for the Furniro contact page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "introTitle": {
+      "type": "string",
+      "required": true
+    },
+    "introDescription": {
+      "type": "text",
+      "required": true
+    },
+    "headerContent": {
+      "type": "json",
+      "required": true
+    },
+    "heroContent": {
+      "type": "json",
+      "required": true
+    },
+    "contactDetails": {
+      "type": "json",
+      "required": true
+    },
+    "contactFormContent": {
+      "type": "json",
+      "required": true
+    },
+    "featureHighlights": {
+      "type": "json",
+      "required": true
+    },
+    "footerContent": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

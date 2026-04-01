@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_pages",
+  "info": {
+    "singularName": "blog-page",
+    "pluralName": "blog-pages",
+    "displayName": "Blog Page",
+    "description": "Structured content model for the Furniro blog page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "headerContent": {
+      "type": "json",
+      "required": true
+    },
+    "heroContent": {
+      "type": "json",
+      "required": true
+    },
+    "posts": {
+      "type": "json",
+      "required": true
+    },
+    "categories": {
+      "type": "json",
+      "required": true
+    },
+    "recentPosts": {
+      "type": "json",
+      "required": true
+    },
+    "featureHighlights": {
+      "type": "json",
+      "required": true
+    },
+    "footerContent": {
+      "type": "json",
+      "required": true
+    },
+    "pagination": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
