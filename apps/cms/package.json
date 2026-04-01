@@ -6,6 +6,7 @@
     "dev": "strapi develop",
     "build": "strapi build",
     "start": "strapi start",
+    "seed:posts": "node scripts/seed-posts.js",
     "lint": "eslint .",
     "typecheck": "node -e \"console.log('CMS typecheck skipped (Strapi runtime uses JS config files).')\""
   },

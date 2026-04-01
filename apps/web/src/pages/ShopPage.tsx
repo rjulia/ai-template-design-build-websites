@@ -98,14 +98,14 @@ export function ShopPage() {
 
         <section className="shop-products-grid" aria-label="Shop products">
           {content.products.map((product) => (
-              <HomeProductCard
-                key={product.id}
-                product={product}
-                addToCartLabel={content.addToCartLabel}
-                overlayActions={content.productOverlayActions}
-                onAddToCart={handleAddToCart}
-              />
-            ))}
+            <HomeProductCard
+              key={product.id}
+              product={{ ...product, showOverlay: false }}
+              addToCartLabel={content.addToCartLabel}
+              overlayActions={content.productOverlayActions}
+              onAddToCart={handleAddToCart}
+            />
+          ))}
         </section>
 
         <ShopPagination

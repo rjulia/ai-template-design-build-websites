@@ -7,11 +7,20 @@ type HomeProductCardProps = {
   addToCartLabel: string;
   overlayActions: CmsHomeProductAction[];
   onAddToCart?: (product: CmsHomeProduct) => void;
+  seeDetailLabel?: string;
 };
 
-export function HomeProductCard({ product, addToCartLabel, overlayActions, onAddToCart }: HomeProductCardProps) {
+export function HomeProductCard({
+  product,
+  addToCartLabel,
+  overlayActions,
+  onAddToCart,
+  seeDetailLabel = 'See detail',
+}: HomeProductCardProps) {
+  const shouldRenderOverlay = addToCartLabel.trim().length > 0 || overlayActions.length > 0;
+
   return (
-    <article className="home-product-card">
+    <article className={`home-product-card ${product.showOverlay ? 'is-overlay-visible' : ''}`}>
       <Link to={product.href} className="home-product-image-link" aria-label={product.name}>
         <img src={product.imageUrl} alt={product.name} className="home-product-image" />
       </Link>
@@ -20,8 +29,11 @@ export function HomeProductCard({ product, addToCartLabel, overlayActions, onAdd
         <span className={`home-product-badge ${product.badgeTone === 'new' ? 'is-new' : 'is-discount'}`}>{product.badgeLabel}</span>
       ) : null}
 
-      {product.showOverlay ? (
+      {shouldRenderOverlay ? (
         <div className="home-product-overlay">
+          <Link to={product.href} className="home-product-overlay-detail">
+            {seeDetailLabel}
+          </Link>
           <button type="button" className="home-product-overlay-cta" onClick={() => onAddToCart?.(product)}>
             {addToCartLabel}
           </button>

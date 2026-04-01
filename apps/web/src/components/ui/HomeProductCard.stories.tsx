@@ -20,6 +20,7 @@ const meta = {
   args: {
     product: homePageFallback.products[0],
     addToCartLabel: homePageFallback.addToCartLabel,
+    seeDetailLabel: 'See detail',
     overlayActions: homePageFallback.productOverlayActions,
   },
 } satisfies Meta<typeof HomeProductCard>;
