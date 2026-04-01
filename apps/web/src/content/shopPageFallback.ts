@@ -80,9 +80,9 @@ export const shopPageFallback: CmsShopPageContent = {
   },
   toolbarContent: {
     filterLabel: 'Filter',
-    filterIconUrl: 'https://www.figma.com/api/mcp/asset/03f8ed74-9934-42b7-bc31-15382167ea05',
-    gridIconUrl: 'https://www.figma.com/api/mcp/asset/717eb4bd-df8f-4e43-aab2-c97eab8515a1',
-    listIconUrl: 'https://www.figma.com/api/mcp/asset/c6b65d6c-9b79-44d9-a9cc-93804d6a6e23',
+    filterIconUrl: 'https://www.figma.com/api/mcp/asset/e2e9d0c4-f4ec-49a2-af9d-67a8a6c37e29',
+    gridIconUrl: 'https://www.figma.com/api/mcp/asset/0b046d5d-a609-4b0a-b47b-d15a2b6f772b',
+    listIconUrl: 'https://www.figma.com/api/mcp/asset/cf9479a6-3d71-44c0-b258-9c091d9a1195',
     resultsLabel: 'Showing 1-16 of 32 results',
     showLabel: 'Show',
     showValue: '16',

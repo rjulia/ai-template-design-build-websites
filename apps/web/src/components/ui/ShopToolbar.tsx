@@ -14,11 +14,11 @@ export function ShopToolbar({ content }: ShopToolbarProps) {
           <span>{content.filterLabel}</span>
         </button>
 
-        <button type="button" className="shop-toolbar-icon" aria-label="Grid view">
+        <button type="button" className="shop-toolbar-icon shop-toolbar-icon--grid" aria-label="Grid view">
           <img src={content.gridIconUrl} alt="" aria-hidden="true" />
         </button>
 
-        <button type="button" className="shop-toolbar-icon" aria-label="List view">
+        <button type="button" className="shop-toolbar-icon shop-toolbar-icon--list" aria-label="List view">
           <img src={content.listIconUrl} alt="" aria-hidden="true" />
         </button>
 

@@ -47,6 +47,26 @@
   display: block;
 }
 
+.shop-toolbar-icon--grid {
+  height: 28px;
+  width: 28px;
+}
+
+.shop-toolbar-icon--grid img {
+  height: 28px;
+  width: 28px;
+}
+
+.shop-toolbar-icon--list {
+  height: 24px;
+  width: 24px;
+}
+
+.shop-toolbar-icon--list img {
+  height: 24px;
+  width: 24px;
+}
+
 .shop-toolbar-results {
   border-left: 2px solid #9f9f9f;
   font-size: 16px;
