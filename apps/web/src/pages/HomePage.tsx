@@ -2,8 +2,11 @@ import type { CmsCollectionResponse, CmsHomePageContent } from '@workspace/share
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
+import { useAppDispatch } from '../app/hooks';
 import { HomeProductCard, HomeRangeCard, HomeShareTile, FurniroFooter, FurniroHeader } from '../components/ui';
 import { homePageFallback } from '../content/homePageFallback';
+import { mapHomeProductToCartEntry } from '../features/cart/cartMappers';
+import { addItem, openCart } from '../features/cart/cartSlice';
 import { useGetHomePageBySlugQuery } from '../services/cmsApi';
 
 function normalizeCollectionEntry<T>(response: CmsCollectionResponse<T> | undefined): T | undefined {
@@ -58,12 +61,23 @@ function getHomePageContent(data: CmsCollectionResponse<CmsHomePageContent> | un
 }
 
 export function HomePage() {
+  const dispatch = useAppDispatch();
   const { data } = useGetHomePageBySlugQuery('home');
   const content = getHomePageContent(data);
 
+  const handleHeaderActionClick = (actionName: string) => {
+    if (actionName === 'cart') {
+      dispatch(openCart());
+    }
+  };
+
+  const handleAddToCart = (product: CmsHomePageContent['products'][number]) => {
+    dispatch(addItem(mapHomeProductToCartEntry(product)));
+  };
+
   return (
     <div className="home-page">
-      <FurniroHeader content={content.headerContent} />
+      <FurniroHeader content={content.headerContent} onActionClick={handleHeaderActionClick} />
 
       <section className="home-hero" style={{ backgroundImage: `url(${content.heroContent.backgroundImageUrl})` }}>
         <div className="home-hero-panel">
@@ -96,6 +110,7 @@ export function HomePage() {
                 product={product}
                 addToCartLabel={content.addToCartLabel}
                 overlayActions={content.productOverlayActions}
+                onAddToCart={handleAddToCart}
               />
             ))}
           </div>

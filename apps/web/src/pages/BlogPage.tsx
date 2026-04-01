@@ -2,8 +2,10 @@ import type { CmsBlogPageContent, CmsCollectionResponse } from '@workspace/share
 import { Link } from 'react-router-dom';
 import './BlogPage.css';
 
+import { useAppDispatch } from '../app/hooks';
 import { BlogPostCard, BlogSidebar, FeatureHighlights, FurniroFooter, FurniroHeader } from '../components/ui';
 import { blogPageFallback } from '../content/blogPageFallback';
+import { openCart } from '../features/cart/cartSlice';
 import { useGetBlogPageBySlugQuery } from '../services/cmsApi';
 
 function normalizeCollectionEntry<T>(response: CmsCollectionResponse<T> | undefined): T | undefined {
@@ -54,12 +56,19 @@ function getBlogPageContent(data: CmsCollectionResponse<CmsBlogPageContent> | un
 }
 
 export function BlogPage() {
+  const dispatch = useAppDispatch();
   const { data } = useGetBlogPageBySlugQuery('blog');
   const content = getBlogPageContent(data);
 
+  const handleHeaderActionClick = (actionName: string) => {
+    if (actionName === 'cart') {
+      dispatch(openCart());
+    }
+  };
+
   return (
     <div className="blog-page">
-      <FurniroHeader content={content.headerContent} />
+      <FurniroHeader content={content.headerContent} onActionClick={handleHeaderActionClick} />
 
       <section
         className="blog-hero"

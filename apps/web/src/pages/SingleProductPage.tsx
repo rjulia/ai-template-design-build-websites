@@ -2,6 +2,7 @@ import type { CmsCollectionResponse, CmsSingleProductPageContent } from '@worksp
 import { Link, useParams } from 'react-router-dom';
 import './SingleProductPage.css';
 
+import { useAppDispatch } from '../app/hooks';
 import {
   FurniroFooter,
   FurniroHeader,
@@ -12,6 +13,8 @@ import {
   SingleProductInfo,
 } from '../components/ui';
 import { singleProductPageFallback } from '../content/singleProductPageFallback';
+import { mapHomeProductToCartEntry, mapSingleProductToCartEntry } from '../features/cart/cartMappers';
+import { addItem, openCart } from '../features/cart/cartSlice';
 import { useGetSingleProductPageBySlugQuery } from '../services/cmsApi';
 
 function normalizeCollectionEntry<T>(response: CmsCollectionResponse<T> | undefined): T | undefined {
@@ -93,20 +96,35 @@ function getSingleProductPageContent(
 }
 
 export function SingleProductPage() {
+  const dispatch = useAppDispatch();
   const { productSlug } = useParams();
   const slug = productSlug ?? singleProductPageFallback.slug;
   const { data } = useGetSingleProductPageBySlugQuery(slug);
   const content = getSingleProductPageContent(data);
 
+  const handleHeaderActionClick = (actionName: string) => {
+    if (actionName === 'cart') {
+      dispatch(openCart());
+    }
+  };
+
+  const handleSingleProductAddToCart = (quantity: number) => {
+    dispatch(addItem(mapSingleProductToCartEntry(content.productContent, slug, quantity)));
+  };
+
+  const handleRelatedProductAddToCart = (product: CmsSingleProductPageContent['relatedProductsContent']['products'][number]) => {
+    dispatch(addItem(mapHomeProductToCartEntry(product)));
+  };
+
   return (
     <div className="single-product-page">
-      <FurniroHeader content={content.headerContent} />
+      <FurniroHeader content={content.headerContent} onActionClick={handleHeaderActionClick} />
       <SingleProductBreadcrumb content={content.breadcrumbContent} />
 
       <main>
         <section className="single-product-overview">
           <SingleProductGallery gallery={content.productContent.gallery} />
-          <SingleProductInfo content={content.productContent} />
+          <SingleProductInfo content={content.productContent} onAddToCart={handleSingleProductAddToCart} />
         </section>
 
         <SingleProductDescriptionSection content={content.descriptionContent} />
@@ -120,6 +138,7 @@ export function SingleProductPage() {
                 product={{ ...product, showOverlay: false }}
                 addToCartLabel={content.relatedProductsContent.addToCartLabel}
                 overlayActions={[]}
+                onAddToCart={handleRelatedProductAddToCart}
               />
             ))}
           </div>

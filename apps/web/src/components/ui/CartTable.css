@@ -28,6 +28,12 @@
   padding: 0 25px 0 0;
 }
 
+.cart-table-empty {
+  color: #666666;
+  font-size: 16px;
+  margin: 36px 0 0;
+}
+
 .cart-product-cell {
   align-items: center;
   display: flex;
@@ -76,6 +82,29 @@
   height: 32px;
   justify-content: center;
   line-height: 1.5;
+  width: 32px;
+}
+
+.cart-quantity-controls {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.cart-quantity-controls button {
+  align-items: center;
+  background: #f9f1e7;
+  border: 1px solid #d6c7ad;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  height: 32px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
   width: 32px;
 }
 

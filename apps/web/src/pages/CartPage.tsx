@@ -1,8 +1,10 @@
 import type { CmsCartPageContent, CmsCollectionResponse } from '@workspace/shared';
 import { Link } from 'react-router-dom';
 
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { CartTable, CartTotalsCard, FeatureHighlights, FurniroFooter, FurniroHeader } from '../components/ui';
 import { cartPageFallback } from '../content/cartPageFallback';
+import { decreaseItemQuantity, increaseItemQuantity, openCart, removeItem, selectCartItems, selectCartSubtotalLabel } from '../features/cart/cartSlice';
 import { useGetCartPageBySlugQuery } from '../services/cmsApi';
 import './CartPage.css';
 
@@ -64,12 +66,21 @@ function getCartPageContent(data: CmsCollectionResponse<CmsCartPageContent> | un
 }
 
 export function CartPage() {
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(selectCartItems);
+  const cartSubtotalLabel = useAppSelector(selectCartSubtotalLabel);
   const { data } = useGetCartPageBySlugQuery('cart');
   const content = getCartPageContent(data);
 
+  const handleHeaderActionClick = (actionName: string) => {
+    if (actionName === 'cart') {
+      dispatch(openCart());
+    }
+  };
+
   return (
     <div className="cart-page">
-      <FurniroHeader content={content.headerContent} />
+      <FurniroHeader content={content.headerContent} onActionClick={handleHeaderActionClick} />
 
       <section
         className="cart-hero"
@@ -95,8 +106,14 @@ export function CartPage() {
 
       <main className="cart-main">
         <section className="cart-content" aria-label="Shopping cart">
-          <CartTable content={content.cartTable} />
-          <CartTotalsCard content={content.totals} />
+          <CartTable
+            content={content.cartTable}
+            items={cartItems}
+            onIncreaseQuantity={(itemId) => dispatch(increaseItemQuantity(itemId))}
+            onDecreaseQuantity={(itemId) => dispatch(decreaseItemQuantity(itemId))}
+            onRemoveItem={(itemId) => dispatch(removeItem(itemId))}
+          />
+          <CartTotalsCard content={content.totals} subtotalValue={cartSubtotalLabel} totalValue={cartSubtotalLabel} />
         </section>
       </main>
 

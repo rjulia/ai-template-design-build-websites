@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checkout_pages",
+  "info": {
+    "singularName": "checkout-page",
+    "pluralName": "checkout-pages",
+    "displayName": "Checkout Page",
+    "description": "Structured content model for the Furniro checkout page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "headerContent": {
+      "type": "json",
+      "required": true
+    },
+    "heroContent": {
+      "type": "json",
+      "required": true
+    },
+    "breadcrumbSeparatorIconUrl": {
+      "type": "string",
+      "required": true
+    },
+    "billingTitle": {
+      "type": "string",
+      "required": true
+    },
+    "billingFields": {
+      "type": "json",
+      "required": true
+    },
+    "summaryContent": {
+      "type": "json",
+      "required": true
+    },
+    "featureHighlights": {
+      "type": "json",
+      "required": true
+    },
+    "footerContent": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

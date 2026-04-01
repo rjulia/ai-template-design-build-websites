@@ -2,6 +2,8 @@ export { BlogPostCard } from './BlogPostCard';
 export { BlogSidebar } from './BlogSidebar';
 export { Button } from './Button';
 export { Card } from './Card';
+export { CheckoutBillingForm } from './CheckoutBillingForm';
+export { CheckoutOrderSummary } from './CheckoutOrderSummary';
 export { CartTable } from './CartTable';
 export { CartTotalsCard } from './CartTotalsCard';
 export { FeatureHighlightCard } from './FeatureHighlightCard';

@@ -4,9 +4,10 @@ import './FurniroHeader.css';
 
 type FurniroHeaderProps = {
   content: CmsHeaderContent;
+  onActionClick?: (actionName: string) => void;
 };
 
-export function FurniroHeader({ content }: FurniroHeaderProps) {
+export function FurniroHeader({ content, onActionClick }: FurniroHeaderProps) {
   return (
     <header className="furniro-header" aria-label="Main site header">
       <div className="furniro-brand">
@@ -24,7 +25,13 @@ export function FurniroHeader({ content }: FurniroHeaderProps) {
 
       <div className="furniro-actions" aria-label="Header actions">
         {content.actionIcons.map((icon) => (
-          <button key={icon.name} type="button" className="furniro-icon-button" aria-label={icon.name}>
+          <button
+            key={icon.name}
+            type="button"
+            className="furniro-icon-button"
+            aria-label={icon.name}
+            onClick={() => onActionClick?.(icon.name)}
+          >
             <img src={icon.iconUrl} alt="" aria-hidden="true" />
           </button>
         ))}

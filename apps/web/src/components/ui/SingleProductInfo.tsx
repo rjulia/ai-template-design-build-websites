@@ -4,6 +4,7 @@ import './SingleProductInfo.css';
 
 type SingleProductInfoProps = {
   content: CmsSingleProductContent;
+  onAddToCart?: (quantity: number) => void;
 };
 
 type DetailRowProps = {
@@ -21,7 +22,7 @@ function DetailRow({ label, value }: DetailRowProps) {
   );
 }
 
-export function SingleProductInfo({ content }: SingleProductInfoProps) {
+export function SingleProductInfo({ content, onAddToCart }: SingleProductInfoProps) {
   const [quantity, setQuantity] = useState(Math.max(1, content.quantityDefault));
   const [selectedSizeId, setSelectedSizeId] = useState(content.sizes.find((size) => size.isSelected)?.id ?? content.sizes[0]?.id);
   const [selectedColorId, setSelectedColorId] = useState(
@@ -90,7 +91,11 @@ export function SingleProductInfo({ content }: SingleProductInfoProps) {
           </button>
         </div>
 
-        <button type="button" className="single-product-info-primary-action">
+        <button
+          type="button"
+          className="single-product-info-primary-action"
+          onClick={() => onAddToCart?.(quantity)}
+        >
           {content.addToCartLabel}
         </button>
         <button type="button" className="single-product-info-secondary-action">

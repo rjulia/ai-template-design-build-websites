@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { cartPageFallback } from '../../content/cartPageFallback';
 import { CartTotalsCard } from './CartTotalsCard';
+import { cartPageFallback } from '../../content/cartPageFallback';
 
 const meta = {
   title: 'UI/CartTotalsCard',
@@ -16,6 +16,8 @@ const meta = {
   ],
   args: {
     content: cartPageFallback.totals,
+    subtotalValue: cartPageFallback.totals.subtotalValue,
+    totalValue: cartPageFallback.totals.totalValue,
   },
 } satisfies Meta<typeof CartTotalsCard>;
 

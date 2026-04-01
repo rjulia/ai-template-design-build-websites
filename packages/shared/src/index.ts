@@ -293,6 +293,56 @@ export type CmsCartPageContent = {
   footerContent: CmsFooterContent;
 };
 
+export type CmsCheckoutBillingField = {
+  id: string;
+  label: string;
+  type: 'text' | 'email' | 'tel' | 'textarea' | 'select';
+  placeholder?: string;
+  required?: boolean;
+  halfWidth?: boolean;
+  options?: string[];
+  defaultValue?: string;
+};
+
+export type CmsCheckoutFallbackOrderItem = {
+  id: string;
+  name: string;
+  quantity: number;
+  priceLabel: string;
+};
+
+export type CmsCheckoutPaymentMethod = {
+  id: string;
+  label: string;
+  description?: string;
+  isSelected?: boolean;
+};
+
+export type CmsCheckoutOrderSummaryContent = {
+  productHeading: string;
+  subtotalHeading: string;
+  subtotalLabel: string;
+  totalLabel: string;
+  placeOrderLabel: string;
+  privacyNotice: string;
+  privacyPolicyLabel: string;
+  paymentMethods: CmsCheckoutPaymentMethod[];
+  fallbackItems: CmsCheckoutFallbackOrderItem[];
+};
+
+export type CmsCheckoutPageContent = {
+  slug: string;
+  title: string;
+  headerContent: CmsHeaderContent;
+  heroContent: CmsHeroContent;
+  breadcrumbSeparatorIconUrl: string;
+  billingTitle: string;
+  billingFields: CmsCheckoutBillingField[];
+  summaryContent: CmsCheckoutOrderSummaryContent;
+  featureHighlights: CmsFeatureHighlight[];
+  footerContent: CmsFooterContent;
+};
+
 export type CmsSingleProductBreadcrumbContent = {
   items: Array<{
     label: string;

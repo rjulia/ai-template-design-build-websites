@@ -2,8 +2,11 @@ import type { CmsCollectionResponse, CmsShopPageContent } from '@workspace/share
 import { Link } from 'react-router-dom';
 import './ShopPage.css';
 
+import { useAppDispatch } from '../app/hooks';
 import { FeatureHighlights, FurniroFooter, FurniroHeader, HomeProductCard, ShopPagination, ShopToolbar } from '../components/ui';
 import { shopPageFallback } from '../content/shopPageFallback';
+import { mapHomeProductToCartEntry } from '../features/cart/cartMappers';
+import { addItem, openCart } from '../features/cart/cartSlice';
 import { useGetShopPageBySlugQuery } from '../services/cmsApi';
 
 function normalizeCollectionEntry<T>(response: CmsCollectionResponse<T> | undefined): T | undefined {
@@ -57,12 +60,23 @@ function getShopPageContent(data: CmsCollectionResponse<CmsShopPageContent> | un
 }
 
 export function ShopPage() {
+  const dispatch = useAppDispatch();
   const { data } = useGetShopPageBySlugQuery('shop');
   const content = getShopPageContent(data);
 
+  const handleHeaderActionClick = (actionName: string) => {
+    if (actionName === 'cart') {
+      dispatch(openCart());
+    }
+  };
+
+  const handleAddToCart = (product: CmsShopPageContent['products'][number]) => {
+    dispatch(addItem(mapHomeProductToCartEntry(product)));
+  };
+
   return (
     <div className="shop-page">
-      <FurniroHeader content={content.headerContent} />
+      <FurniroHeader content={content.headerContent} onActionClick={handleHeaderActionClick} />
 
       <section
         className="shop-hero"
@@ -84,13 +98,14 @@ export function ShopPage() {
 
         <section className="shop-products-grid" aria-label="Shop products">
           {content.products.map((product) => (
-            <HomeProductCard
-              key={product.id}
-              product={product}
-              addToCartLabel={content.addToCartLabel}
-              overlayActions={content.productOverlayActions}
-            />
-          ))}
+              <HomeProductCard
+                key={product.id}
+                product={product}
+                addToCartLabel={content.addToCartLabel}
+                overlayActions={content.productOverlayActions}
+                onAddToCart={handleAddToCart}
+              />
+            ))}
         </section>
 
         <ShopPagination

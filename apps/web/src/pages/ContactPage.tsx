@@ -3,8 +3,10 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import './ContactPage.css';
 
+import { useAppDispatch } from '../app/hooks';
 import { Button, FeatureHighlights, FurniroFooter, FurniroHeader } from '../components/ui';
 import { contactPageFallback } from '../content/contactPageFallback';
+import { openCart } from '../features/cart/cartSlice';
 import { useGetContactPageBySlugQuery } from '../services/cmsApi';
 
 type ContactFormFieldProps = {
@@ -68,12 +70,19 @@ function getContactPageContent(data: CmsCollectionResponse<CmsContactPageContent
 }
 
 export function ContactPage() {
+  const dispatch = useAppDispatch();
   const { data } = useGetContactPageBySlugQuery('contact');
   const content = getContactPageContent(data);
 
+  const handleHeaderActionClick = (actionName: string) => {
+    if (actionName === 'cart') {
+      dispatch(openCart());
+    }
+  };
+
   return (
     <div className="contact-page">
-      <FurniroHeader content={content.headerContent} />
+      <FurniroHeader content={content.headerContent} onActionClick={handleHeaderActionClick} />
 
       <section
         className="contact-hero"

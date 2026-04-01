@@ -6,9 +6,10 @@ type HomeProductCardProps = {
   product: CmsHomeProduct;
   addToCartLabel: string;
   overlayActions: CmsHomeProductAction[];
+  onAddToCart?: (product: CmsHomeProduct) => void;
 };
 
-export function HomeProductCard({ product, addToCartLabel, overlayActions }: HomeProductCardProps) {
+export function HomeProductCard({ product, addToCartLabel, overlayActions, onAddToCart }: HomeProductCardProps) {
   return (
     <article className="home-product-card">
       <Link to={product.href} className="home-product-image-link" aria-label={product.name}>
@@ -21,7 +22,7 @@ export function HomeProductCard({ product, addToCartLabel, overlayActions }: Hom
 
       {product.showOverlay ? (
         <div className="home-product-overlay">
-          <button type="button" className="home-product-overlay-cta">
+          <button type="button" className="home-product-overlay-cta" onClick={() => onAddToCart?.(product)}>
             {addToCartLabel}
           </button>
           <div className="home-product-overlay-actions">

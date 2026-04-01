@@ -420,6 +420,39 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCheckoutPageCheckoutPage extends Struct.CollectionTypeSchema {
+  collectionName: 'checkout_pages';
+  info: {
+    description: 'Structured content model for the Furniro checkout page';
+    displayName: 'Checkout Page';
+    pluralName: 'checkout-pages';
+    singularName: 'checkout-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    billingFields: Schema.Attribute.JSON & Schema.Attribute.Required;
+    billingTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    breadcrumbSeparatorIconUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    featureHighlights: Schema.Attribute.JSON & Schema.Attribute.Required;
+    footerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    headerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    heroContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::checkout-page.checkout-page'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    summaryContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactPageContactPage extends Struct.CollectionTypeSchema {
   collectionName: 'contact_pages';
   info: {
@@ -896,6 +929,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
+      'api::checkout-page.checkout-page': ApiCheckoutPageCheckoutPage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::page.page': ApiPagePage;
