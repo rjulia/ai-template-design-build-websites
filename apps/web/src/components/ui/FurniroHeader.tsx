@@ -8,6 +8,11 @@ type FurniroHeaderProps = {
 };
 
 export function FurniroHeader({ content, onActionClick }: FurniroHeaderProps) {
+  const hasBlogLink = content.navItems.some(
+    (item) => item.href.trim().toLowerCase() === '/blog' || item.label.trim().toLowerCase() === 'blog',
+  );
+  const navItems = hasBlogLink ? content.navItems : [...content.navItems, { label: 'Blog', href: '/blog' }];
+
   return (
     <header className="furniro-header" aria-label="Main site header">
       <div className="furniro-brand">
@@ -16,7 +21,7 @@ export function FurniroHeader({ content, onActionClick }: FurniroHeaderProps) {
       </div>
 
       <nav className="furniro-nav" aria-label="Primary navigation">
-        {content.navItems.map((item) => (
+        {navItems.map((item) => (
           <NavLink key={item.label} to={item.href} className="furniro-nav-link">
             {item.label}
           </NavLink>
