@@ -1,0 +1,136 @@
+.home-product-card {
+  background: #f4f5f7;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+}
+
+.home-product-image-link {
+  display: block;
+}
+
+.home-product-image {
+  display: block;
+  height: 301px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.home-product-content {
+  padding: 16px 16px 28px;
+}
+
+.home-product-content h3 {
+  color: #3a3a3a;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.home-product-content p {
+  color: #898989;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-product-pricing {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.home-product-pricing span {
+  color: #3a3a3a;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.home-product-pricing strong {
+  color: #b0b0b0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: line-through;
+}
+
+.home-product-badge {
+  align-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 48px;
+}
+
+.home-product-badge.is-discount {
+  background: #e97171;
+}
+
+.home-product-badge.is-new {
+  background: #2ec1ac;
+}
+
+.home-product-overlay {
+  align-items: center;
+  background: rgba(58, 58, 58, 0.72);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  left: 0;
+  padding: 24px 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.home-product-overlay-cta {
+  background: #ffffff;
+  border: 0;
+  color: #b88e2f;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  min-height: 48px;
+  min-width: 202px;
+  padding: 10px 16px;
+}
+
+.home-product-overlay-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.home-product-overlay-action {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 2px;
+  padding: 0;
+}
+
+.home-product-overlay-action img {
+  display: block;
+  height: 16px;
+  width: 16px;
+}

@@ -1,5 +1,6 @@
 import type { CmsHomeProduct, CmsHomeProductAction } from '@workspace/shared';
 import { Link } from 'react-router-dom';
+import './HomeProductCard.css';
 
 type HomeProductCardProps = {
   product: CmsHomeProduct;

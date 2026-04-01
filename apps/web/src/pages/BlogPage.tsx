@@ -1,5 +1,6 @@
 import type { CmsBlogPageContent, CmsCollectionResponse } from '@workspace/shared';
 import { Link } from 'react-router-dom';
+import './BlogPage.css';
 
 import { BlogPostCard, BlogSidebar, FeatureHighlights, FurniroFooter, FurniroHeader } from '../components/ui';
 import { blogPageFallback } from '../content/blogPageFallback';
@@ -57,21 +58,21 @@ export function BlogPage() {
   const content = getBlogPageContent(data);
 
   return (
-    <div className="contact-page">
+    <div className="blog-page">
       <FurniroHeader content={content.headerContent} />
 
       <section
-        className="contact-hero blog-hero"
+        className="blog-hero"
         style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.68), rgba(255,255,255,0.68)), url(${content.heroContent.backgroundImageUrl})` }}
       >
         <img src={content.heroContent.logoImageUrl} alt="" aria-hidden="true" />
         <h1>{content.heroContent.title}</h1>
-        <nav aria-label="Breadcrumb" className="contact-breadcrumb">
+        <nav aria-label="Breadcrumb" className="blog-breadcrumb">
           {content.heroContent.breadcrumbs.map((crumb, index) => (
             <span key={crumb.label}>
               <Link to={crumb.href}>{crumb.label}</Link>
               {index < content.heroContent.breadcrumbs.length - 1 ? (
-                <span className="contact-breadcrumb-separator">&gt;</span>
+                <span className="blog-breadcrumb-separator">&gt;</span>
               ) : null}
             </span>
           ))}

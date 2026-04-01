@@ -1,0 +1,25 @@
+.home-range-card {
+  display: block;
+}
+
+.home-range-card img {
+  border-radius: 10px;
+  display: block;
+  height: 480px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.home-range-card h3 {
+  color: #333333;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 30px 0 0;
+}
+
+@media (max-width: 700px) {
+  .home-range-card img {
+    height: 340px;
+  }
+}

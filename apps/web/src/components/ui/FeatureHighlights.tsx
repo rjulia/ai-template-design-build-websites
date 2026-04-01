@@ -1,4 +1,5 @@
 import type { CmsFeatureHighlight } from '@workspace/shared';
+import './FeatureHighlights.css';
 
 import { FeatureHighlightCard } from './FeatureHighlightCard';
 

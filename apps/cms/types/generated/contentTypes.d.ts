@@ -520,6 +520,40 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiShopPageShopPage extends Struct.CollectionTypeSchema {
+  collectionName: 'shop_pages';
+  info: {
+    description: 'Structured content model for the Furniro shop page';
+    displayName: 'Shop Page';
+    pluralName: 'shop-pages';
+    singularName: 'shop-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addToCartLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    featureHighlights: Schema.Attribute.JSON & Schema.Attribute.Required;
+    footerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    headerContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    heroContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::shop-page.shop-page'> &
+      Schema.Attribute.Private;
+    pagination: Schema.Attribute.JSON & Schema.Attribute.Required;
+    productOverlayActions: Schema.Attribute.JSON & Schema.Attribute.Required;
+    products: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    toolbarContent: Schema.Attribute.JSON & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
   info: {
@@ -831,6 +865,7 @@ declare module '@strapi/strapi' {
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::page.page': ApiPagePage;
+      'api::shop-page.shop-page': ApiShopPageShopPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

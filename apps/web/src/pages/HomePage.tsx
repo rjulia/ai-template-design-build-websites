@@ -1,5 +1,6 @@
 import type { CmsCollectionResponse, CmsHomePageContent } from '@workspace/shared';
 import { Link } from 'react-router-dom';
+import './HomePage.css';
 
 import { HomeProductCard, HomeRangeCard, HomeShareTile, FurniroFooter, FurniroHeader } from '../components/ui';
 import { homePageFallback } from '../content/homePageFallback';

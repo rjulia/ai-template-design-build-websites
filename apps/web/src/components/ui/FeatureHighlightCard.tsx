@@ -1,4 +1,5 @@
 import type { CmsFeatureHighlight } from '@workspace/shared';
+import './FeatureHighlightCard.css';
 
 type FeatureHighlightCardProps = {
   item: CmsFeatureHighlight;

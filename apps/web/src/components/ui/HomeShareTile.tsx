@@ -1,4 +1,5 @@
 import type { CmsHomeShareTile } from '@workspace/shared';
+import './HomeShareTile.css';
 
 type HomeShareTileProps = {
   tile: CmsHomeShareTile;

@@ -50,6 +50,7 @@ Translate Figma designs into production-ready UI with high fidelity, reusable co
 1. Prefer composable variants over one-off custom styles.
 2. Use tokens/patterns consistently (colors, radius, spacing).
 3. Keep naming aligned with design semantics where practical.
+4. Co-locate CSS with each component/page; reserve `styles.css` for global and cross-cutting styles only.
 
 ## Completion Checklist
 

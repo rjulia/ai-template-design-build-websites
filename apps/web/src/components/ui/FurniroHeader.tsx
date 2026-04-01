@@ -1,5 +1,6 @@
 import type { CmsHeaderContent } from '@workspace/shared';
 import { NavLink } from 'react-router-dom';
+import './FurniroHeader.css';
 
 type FurniroHeaderProps = {
   content: CmsHeaderContent;

@@ -1,5 +1,6 @@
 import type { CmsBlogPost } from '@workspace/shared';
 import { Link } from 'react-router-dom';
+import './BlogPostCard.css';
 
 type BlogPostCardProps = {
   post: CmsBlogPost;

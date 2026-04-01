@@ -214,3 +214,42 @@ export type CmsHomePageContent = {
   shareContent: CmsHomeShareContent;
   footerContent: CmsFooterContent;
 };
+
+export type CmsShopHeroContent = {
+  title: string;
+  backgroundImageUrl: string;
+  breadcrumbs: Array<{
+    label: string;
+    href: string;
+  }>;
+};
+
+export type CmsShopToolbarContent = {
+  filterLabel: string;
+  filterIconUrl: string;
+  gridIconUrl: string;
+  listIconUrl: string;
+  resultsLabel: string;
+  showLabel: string;
+  showValue: string;
+  sortLabel: string;
+  sortValue: string;
+};
+
+export type CmsShopPageContent = {
+  slug: string;
+  title: string;
+  headerContent: CmsHeaderContent;
+  heroContent: CmsShopHeroContent;
+  toolbarContent: CmsShopToolbarContent;
+  products: CmsHomeProduct[];
+  productOverlayActions: CmsHomeProductAction[];
+  addToCartLabel: string;
+  pagination: {
+    currentPage: number;
+    pages: number[];
+    nextLabel: string;
+  };
+  featureHighlights: CmsFeatureHighlight[];
+  footerContent: CmsFooterContent;
+};

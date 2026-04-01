@@ -1,0 +1,27 @@
+.feature-highlight-item {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.feature-highlight-item img {
+  display: block;
+  height: 60px;
+  width: 60px;
+}
+
+.feature-highlight-item h3 {
+  color: #242424;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.feature-highlight-item p {
+  color: #898989;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}

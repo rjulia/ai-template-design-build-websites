@@ -1,0 +1,479 @@
+.home-page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.home-hero {
+  background-position: center;
+  background-size: cover;
+  min-height: 716px;
+  padding: 153px 58px 117px;
+}
+
+.home-hero-panel {
+  background: #fff3e3;
+  border-radius: 10px;
+  margin-left: auto;
+  max-width: 643px;
+  min-height: 443px;
+  padding: 62px 39px 37px;
+}
+
+.home-hero-panel p {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+.home-hero-panel h1 {
+  color: #b88e2f;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px;
+  white-space: pre-line;
+}
+
+.home-hero-panel span {
+  color: #333333;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.34;
+  margin-bottom: 46px;
+  max-width: 546px;
+}
+
+.home-hero-cta {
+  background: #b88e2f;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  min-width: 222px;
+  padding: 25px 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-range {
+  padding: 56px 100px 52px;
+  text-align: center;
+}
+
+.home-range h2 {
+  color: #333333;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-range p {
+  color: #666666;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.home-range-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 62px;
+}
+
+.home-products {
+  padding: 4px 102px 69px;
+  text-align: center;
+}
+
+.home-products h2 {
+  color: #3a3a3a;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.home-products-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 32px;
+}
+
+.home-show-more {
+  border: 1px solid #b88e2f;
+  color: #b88e2f;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 32px;
+  min-width: 245px;
+  padding: 11px 24px;
+}
+
+.home-inspirations {
+  align-items: center;
+  background: #fcf8f3;
+  display: grid;
+  gap: 42px;
+  grid-template-columns: 422px 1fr;
+  min-height: 670px;
+  overflow: hidden;
+  padding: 44px 100px;
+}
+
+.home-inspirations-copy h2 {
+  color: #3a3a3a;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.home-inspirations-copy p {
+  color: #616161;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 24px;
+  max-width: 368px;
+}
+
+.home-inspirations-cta {
+  background: #b88e2f;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  min-width: 176px;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+.home-inspirations-gallery {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  min-width: 0;
+  position: relative;
+}
+
+.home-inspiration-primary {
+  margin: 0;
+  min-width: 404px;
+  position: relative;
+}
+
+.home-inspiration-primary img {
+  display: block;
+  height: 582px;
+  object-fit: cover;
+  width: 404px;
+}
+
+.home-inspiration-caption {
+  backdrop-filter: blur(1.5px);
+  background: rgba(255, 255, 255, 0.72);
+  bottom: 24px;
+  left: 24px;
+  min-height: 130px;
+  padding: 32px 32px 16px;
+  position: absolute;
+  width: 217px;
+}
+
+.home-inspiration-caption p {
+  align-items: center;
+  color: #616161;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 8px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-inspiration-caption p span {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.home-inspiration-caption p span::before {
+  background: #616161;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  margin-top: 12px;
+  width: 27px;
+}
+
+.home-inspiration-caption h3 {
+  color: #3a3a3a;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 8px 0 0;
+}
+
+.home-inspiration-action {
+  align-items: center;
+  background: #b88e2f;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  left: 241px;
+  padding: 0;
+  position: absolute;
+  top: 510px;
+  width: 48px;
+}
+
+.home-inspiration-action img {
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+.home-inspiration-secondary img,
+.home-inspiration-tertiary img {
+  display: block;
+  height: 486px;
+  object-fit: cover;
+  width: 372px;
+}
+
+.home-inspiration-tertiary {
+  opacity: 0.74;
+}
+
+.home-inspiration-next {
+  align-items: center;
+  background: #ffffff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 12px;
+  top: 267px;
+  width: 48px;
+}
+
+.home-inspiration-next img {
+  display: block;
+  height: 14px;
+  width: 8px;
+}
+
+.home-share {
+  overflow: hidden;
+  padding: 67px 0 50px;
+  text-align: center;
+}
+
+.home-share > p {
+  color: #616161;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-share > h2 {
+  color: #3a3a3a;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.home-share-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-areas:
+    'left-top left-top left-middle left-middle center-top center-top center-top right-top right-top right-middle right-middle right-middle'
+    'left-top left-top left-middle left-middle center-top center-top center-top right-top right-top right-middle right-middle right-middle'
+    'left-bottom left-bottom left-middle left-middle center-bottom center-bottom center-bottom right-small right-small right-middle right-middle right-middle'
+    'left-bottom left-bottom left-middle left-middle center-bottom center-bottom center-bottom right-small right-small far-right far-right far-right';
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  margin: 28px auto 0;
+  max-width: 1800px;
+  min-height: 721px;
+  padding: 0 20px;
+}
+
+@media (max-width: 1220px) {
+  .home-hero {
+    min-height: unset;
+    padding: 80px 20px;
+  }
+
+  .home-hero-panel {
+    margin: 0 auto;
+    padding: 42px 28px;
+  }
+
+  .home-range {
+    padding: 56px 20px;
+  }
+
+  .home-products {
+    padding: 10px 20px 56px;
+  }
+
+  .home-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-inspirations {
+    gap: 30px;
+    grid-template-columns: 1fr;
+    padding: 56px 20px;
+  }
+
+  .home-inspirations-copy p {
+    max-width: none;
+  }
+
+  .home-inspiration-secondary,
+  .home-inspiration-tertiary {
+    display: none;
+  }
+
+  .home-inspiration-next {
+    right: 18px;
+  }
+
+  .home-share-grid {
+    grid-template-areas:
+      'left-top left-top left-middle left-middle'
+      'left-bottom left-bottom center-top center-top'
+      'center-bottom center-bottom right-top right-top'
+      'right-middle right-middle far-right far-right'
+      'right-small right-small right-small right-small';
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    min-height: unset;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-hero {
+    padding: 36px 16px;
+  }
+
+  .home-hero-panel {
+    padding: 30px 18px;
+  }
+
+  .home-hero-panel h1 {
+    font-size: 36px;
+  }
+
+  .home-hero-panel span {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .home-hero-cta {
+    min-width: 174px;
+    padding: 14px 20px;
+  }
+
+  .home-range {
+    padding: 44px 16px;
+  }
+
+  .home-range p {
+    font-size: 16px;
+  }
+
+  .home-range-grid {
+    gap: 16px;
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  .home-products {
+    padding: 10px 16px 46px;
+  }
+
+  .home-products h2 {
+    font-size: 32px;
+  }
+
+  .home-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-show-more {
+    min-width: 190px;
+  }
+
+  .home-inspirations {
+    padding: 44px 16px;
+  }
+
+  .home-inspirations-copy h2 {
+    font-size: 32px;
+  }
+
+  .home-inspiration-primary {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .home-inspiration-primary img {
+    height: 420px;
+    width: 100%;
+  }
+
+  .home-inspiration-caption {
+    left: 12px;
+    width: 192px;
+  }
+
+  .home-inspiration-action {
+    left: 204px;
+  }
+
+  .home-share {
+    padding: 54px 0 36px;
+  }
+
+  .home-share > p {
+    font-size: 18px;
+  }
+
+  .home-share > h2 {
+    font-size: 32px;
+  }
+
+  .home-share-grid {
+    gap: 12px;
+    grid-template-areas:
+      'left-top left-middle'
+      'left-bottom center-top'
+      'center-bottom right-top'
+      'right-middle far-right'
+      'right-small right-small';
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 12px;
+  }
+}

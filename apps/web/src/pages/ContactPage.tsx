@@ -1,6 +1,7 @@
 import type { CmsContactPageContent, CmsCollectionResponse } from '@workspace/shared';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import './ContactPage.css';
 
 import { Button, FeatureHighlights, FurniroFooter, FurniroHeader } from '../components/ui';
 import { contactPageFallback } from '../content/contactPageFallback';

@@ -6,6 +6,7 @@ import { decrement, increment } from './features/counter/counterSlice';
 import { BlogPage } from './pages/BlogPage';
 import { ContactPage } from './pages/ContactPage';
 import { HomePage } from './pages/HomePage';
+import { ShopPage } from './pages/ShopPage';
 import { useGetHealthQuery } from './services/cmsApi';
 
 const getCmsStatusMessage = (
@@ -80,6 +81,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/shop" element={<ShopPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/playground" element={<PlaygroundPage />} />
@@ -91,8 +93,8 @@ export default function App() {
             <section className="hero-card">
               <h1>Page not found</h1>
               <p>
-                Return to <Link to="/">Home</Link>, open <Link to="/blog">Blog</Link>, or open{' '}
-                <Link to="/contact">Contact</Link>.
+                Return to <Link to="/">Home</Link>, open <Link to="/shop">Shop</Link>, open{' '}
+                <Link to="/blog">Blog</Link>, or open <Link to="/contact">Contact</Link>.
               </p>
             </section>
           </main>

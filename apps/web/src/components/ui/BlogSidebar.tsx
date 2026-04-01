@@ -1,5 +1,6 @@
 import type { CmsBlogRecentPost, CmsBlogSidebarCategory } from '@workspace/shared';
 import { Link } from 'react-router-dom';
+import './BlogSidebar.css';
 
 type BlogSidebarProps = {
   categories: CmsBlogSidebarCategory[];

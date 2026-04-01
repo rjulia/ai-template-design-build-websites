@@ -1,5 +1,6 @@
 import type { CmsHomeRangeItem } from '@workspace/shared';
 import { Link } from 'react-router-dom';
+import './HomeRangeCard.css';
 
 type HomeRangeCardProps = {
   item: CmsHomeRangeItem;

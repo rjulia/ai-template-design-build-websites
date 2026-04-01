@@ -1,0 +1,134 @@
+.shop-toolbar {
+  align-items: center;
+  background: #f9f1e7;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100px;
+  padding: 18px 100px;
+}
+
+.shop-toolbar-left {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.shop-toolbar-filter {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 20px;
+  gap: 12px;
+  padding: 0;
+}
+
+.shop-toolbar-filter img {
+  display: block;
+  height: 25px;
+  width: 25px;
+}
+
+.shop-toolbar-icon {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+.shop-toolbar-icon img {
+  display: block;
+}
+
+.shop-toolbar-results {
+  border-left: 2px solid #9f9f9f;
+  font-size: 16px;
+  margin-left: 6px;
+  padding-left: 34px;
+}
+
+.shop-toolbar-right {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+}
+
+.shop-toolbar-select {
+  align-items: center;
+  display: inline-flex;
+  gap: 16px;
+}
+
+.shop-toolbar-select span {
+  font-size: 20px;
+}
+
+.shop-toolbar-select button {
+  background: #ffffff;
+  border: 0;
+  color: #9f9f9f;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  min-height: 55px;
+  min-width: 55px;
+  padding: 12px 18px;
+}
+
+.shop-toolbar-sort-button {
+  min-width: 188px !important;
+  text-align: left;
+}
+
+@media (max-width: 1220px) {
+  .shop-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .shop-toolbar-left,
+  .shop-toolbar-right {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .shop-toolbar {
+    padding: 16px;
+  }
+
+  .shop-toolbar-filter {
+    font-size: 18px;
+  }
+
+  .shop-toolbar-results {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .shop-toolbar-select span {
+    font-size: 18px;
+  }
+
+  .shop-toolbar-select button {
+    font-size: 18px;
+    min-height: 50px;
+    min-width: 50px;
+    padding: 10px 14px;
+  }
+
+  .shop-toolbar-sort-button {
+    min-width: 144px !important;
+  }
+}

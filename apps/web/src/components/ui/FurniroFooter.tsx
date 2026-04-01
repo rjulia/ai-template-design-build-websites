@@ -1,5 +1,6 @@
 import type { CmsFooterContent } from '@workspace/shared';
 import { NavLink } from 'react-router-dom';
+import './FurniroFooter.css';
 
 type FurniroFooterProps = {
   brandName: string;

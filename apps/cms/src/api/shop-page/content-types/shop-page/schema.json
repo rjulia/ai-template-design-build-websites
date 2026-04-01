@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_pages",
+  "info": {
+    "singularName": "shop-page",
+    "pluralName": "shop-pages",
+    "displayName": "Shop Page",
+    "description": "Structured content model for the Furniro shop page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "headerContent": {
+      "type": "json",
+      "required": true
+    },
+    "heroContent": {
+      "type": "json",
+      "required": true
+    },
+    "toolbarContent": {
+      "type": "json",
+      "required": true
+    },
+    "products": {
+      "type": "json",
+      "required": true
+    },
+    "productOverlayActions": {
+      "type": "json",
+      "required": true
+    },
+    "addToCartLabel": {
+      "type": "string",
+      "required": true
+    },
+    "pagination": {
+      "type": "json",
+      "required": true
+    },
+    "featureHighlights": {
+      "type": "json",
+      "required": true
+    },
+    "footerContent": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.furniro-footer {
+  background: #ffffff;
+  border-top: 1px solid #d9d9d9;
+  padding: 48px 100px 38px;
+}
+
+.furniro-footer-grid {
+  column-gap: 64px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 0.9fr 1fr;
+  row-gap: 24px;
+}
+
+.furniro-footer-brand h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.furniro-footer-brand p {
+  color: #9f9f9f;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 50px 0 0;
+  max-width: 285px;
+}
+
+.furniro-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.furniro-footer-column h3 {
+  color: #9f9f9f;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.furniro-footer-link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.furniro-newsletter-form {
+  align-items: flex-end;
+  display: flex;
+  gap: 12px;
+}
+
+.furniro-newsletter-form input {
+  border: 0;
+  border-bottom: 1px solid #000000;
+  color: #9f9f9f;
+  font-family: inherit;
+  font-size: 14px;
+  min-width: 173px;
+  padding: 4px 0;
+}
+
+.furniro-newsletter-form button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 0;
+}
+
+.furniro-footer-copy {
+  border-top: 1px solid #d9d9d9;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 48px 0 0;
+  padding-top: 26px;
+}
+
+@media (max-width: 1220px) {
+  .furniro-footer {
+    padding: 40px 20px 24px;
+  }
+
+  .furniro-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .furniro-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .furniro-footer-brand p {
+    margin-top: 20px;
+  }
+}

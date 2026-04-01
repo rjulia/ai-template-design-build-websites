@@ -5,6 +5,7 @@ import type {
   CmsContactPageContent,
   CmsHealth,
   CmsHomePageContent,
+  CmsShopPageContent,
 } from '@workspace/shared';
 
 const baseUrl = import.meta.env.VITE_CMS_BASE_URL ?? 'http://localhost:1337/api';
@@ -28,8 +29,17 @@ export const cmsApi = createApi({
       query: (slug) =>
         `/home-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
     }),
+    getShopPageBySlug: builder.query<CmsCollectionResponse<CmsShopPageContent>, string>({
+      query: (slug) =>
+        `/shop-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
+    }),
   }),
 });
 
-export const { useGetBlogPageBySlugQuery, useGetContactPageBySlugQuery, useGetHealthQuery, useGetHomePageBySlugQuery } =
-  cmsApi;
+export const {
+  useGetBlogPageBySlugQuery,
+  useGetContactPageBySlugQuery,
+  useGetHealthQuery,
+  useGetHomePageBySlugQuery,
+  useGetShopPageBySlugQuery,
+} = cmsApi;

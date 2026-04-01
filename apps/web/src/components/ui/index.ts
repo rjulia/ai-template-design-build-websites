@@ -10,3 +10,5 @@ export { HomeProductCard } from './HomeProductCard';
 export { HomeRangeCard } from './HomeRangeCard';
 export { HomeShareTile } from './HomeShareTile';
 export { SectionHeading } from './SectionHeading';
+export { ShopPagination } from './ShopPagination';
+export { ShopToolbar } from './ShopToolbar';

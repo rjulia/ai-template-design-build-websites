@@ -1,0 +1,10 @@
+.home-share-tile {
+  margin: 0;
+}
+
+.home-share-tile img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
