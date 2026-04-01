@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type {
   CmsBlogPageContent,
+  CmsCartPageContent,
   CmsCollectionResponse,
   CmsContactPageContent,
   CmsHealth,
@@ -34,6 +35,10 @@ export const cmsApi = createApi({
       query: (slug) =>
         `/shop-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
     }),
+    getCartPageBySlug: builder.query<CmsCollectionResponse<CmsCartPageContent>, string>({
+      query: (slug) =>
+        `/cart-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
+    }),
     getSingleProductPageBySlug: builder.query<CmsCollectionResponse<CmsSingleProductPageContent>, string>({
       query: (slug) =>
         `/single-product-pages?filters[slug][$eq]=${encodeURIComponent(slug)}&pagination[pageSize]=1&status=published`,
@@ -43,6 +48,7 @@ export const cmsApi = createApi({
 
 export const {
   useGetBlogPageBySlugQuery,
+  useGetCartPageBySlugQuery,
   useGetContactPageBySlugQuery,
   useGetHealthQuery,
   useGetHomePageBySlugQuery,

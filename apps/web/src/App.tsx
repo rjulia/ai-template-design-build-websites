@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import { Button, Card, SectionHeading } from './components/ui';
 import { decrement, increment } from './features/counter/counterSlice';
 import { BlogPage } from './pages/BlogPage';
+import { CartPage } from './pages/CartPage';
 import { ContactPage } from './pages/ContactPage';
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
@@ -83,6 +84,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
+      <Route path="/cart" element={<CartPage />} />
       <Route path="/shop/:productSlug" element={<SingleProductPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/contact" element={<ContactPage />} />
@@ -96,7 +98,8 @@ export default function App() {
               <h1>Page not found</h1>
               <p>
                 Return to <Link to="/">Home</Link>, open <Link to="/shop">Shop</Link>, open{' '}
-                <Link to="/blog">Blog</Link>, or open <Link to="/contact">Contact</Link>.
+                <Link to="/blog">Blog</Link>, open <Link to="/cart">Cart</Link>, or open{' '}
+                <Link to="/contact">Contact</Link>.
               </p>
             </section>
           </main>

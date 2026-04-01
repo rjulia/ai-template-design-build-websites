@@ -254,6 +254,45 @@ export type CmsShopPageContent = {
   footerContent: CmsFooterContent;
 };
 
+export type CmsCartTableItem = {
+  id: string;
+  name: string;
+  imageUrl: string;
+  imageAlt: string;
+  priceLabel: string;
+  quantity: number;
+  subtotalLabel: string;
+};
+
+export type CmsCartPageContent = {
+  slug: string;
+  title: string;
+  headerContent: CmsHeaderContent;
+  heroContent: CmsHeroContent;
+  breadcrumbSeparatorIconUrl: string;
+  cartTable: {
+    headers: {
+      product: string;
+      price: string;
+      quantity: string;
+      subtotal: string;
+    };
+    removeIconUrl: string;
+    removeActionLabel: string;
+    items: CmsCartTableItem[];
+  };
+  totals: {
+    title: string;
+    subtotalLabel: string;
+    subtotalValue: string;
+    totalLabel: string;
+    totalValue: string;
+    checkoutLabel: string;
+  };
+  featureHighlights: CmsFeatureHighlight[];
+  footerContent: CmsFooterContent;
+};
+
 export type CmsSingleProductBreadcrumbContent = {
   items: Array<{
     label: string;

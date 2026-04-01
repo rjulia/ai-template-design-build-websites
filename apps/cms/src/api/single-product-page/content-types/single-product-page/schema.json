@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "single_product_pages",
+  "info": {
+    "singularName": "single-product-page",
+    "pluralName": "single-product-pages",
+    "displayName": "Single Product Page",
+    "description": "Structured content model for the Furniro single product page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "headerContent": {
+      "type": "json",
+      "required": true
+    },
+    "breadcrumbContent": {
+      "type": "json",
+      "required": true
+    },
+    "productContent": {
+      "type": "json",
+      "required": true
+    },
+    "descriptionContent": {
+      "type": "json",
+      "required": true
+    },
+    "relatedProductsContent": {
+      "type": "json",
+      "required": true
+    },
+    "footerContent": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
