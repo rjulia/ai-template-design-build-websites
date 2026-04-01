@@ -1,3 +1,12 @@
+export { BlogPostCard } from './BlogPostCard';
+export { BlogSidebar } from './BlogSidebar';
 export { Button } from './Button';
 export { Card } from './Card';
+export { FeatureHighlightCard } from './FeatureHighlightCard';
+export { FeatureHighlights } from './FeatureHighlights';
+export { FurniroFooter } from './FurniroFooter';
+export { FurniroHeader } from './FurniroHeader';
+export { HomeProductCard } from './HomeProductCard';
+export { HomeRangeCard } from './HomeRangeCard';
+export { HomeShareTile } from './HomeShareTile';
 export { SectionHeading } from './SectionHeading';
